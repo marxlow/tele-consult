@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { Layout, Menu } from "antd";
+import React from "react";
+import Home from "./pages/home";
 
-function App() {
+const { Header, Content } = Layout;
+
+const menuItems = [
+  {
+    key: "home",
+    label: "Home",
+  },
+  {
+    key: "appointments",
+    label: "Appointment",
+  },
+];
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout style={{ height: "100vh" }}>
+      <Header
+        style={{
+          backgroundColor: "white",
+          boxShadow: "0 20px 20px -20px rgb(0 0 0 / 15%)",
+        }}
+      >
+        <Menu theme="light" mode="horizontal" items={menuItems} />
+      </Header>
+      <Content style={{ padding: 50 }}>
+        <Home />
+      </Content>
+    </Layout>
   );
-}
+};
 
 export default App;
