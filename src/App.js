@@ -17,7 +17,7 @@ const menuItems = [
 
 const App = () => {
   return (
-    <Layout style={{ height: "100vh" }}>
+    <Layout style={{ height: "100%", overflow: "auto" }}>
       <Header
         style={{
           backgroundColor: "white",
